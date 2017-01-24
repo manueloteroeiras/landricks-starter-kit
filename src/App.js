@@ -7,13 +7,14 @@ import {
   ContextPropagator,
   GenericBrick,
   DoubleContentBrick,
+  TripleContentBrick,
   StrongMessageBrick,
   EnumerationBrick,
   EmailSqueezeBrick,
   CallToAction,
   FeatureItem,
   PlaceHolder,
-  
+  FooterBrick,
   NavigationBrick
 } from 'landricks-components';
 
@@ -110,6 +111,12 @@ class App extends Component {
           <PlaceHolder label="image placeholder" />
         </DoubleContentBrick>
 
+        <TripleContentBrick theme={{fontFamily: "Lato", baseFontSize: "18px", backgroundColor: "#78909c"}} hasHeader={false}>
+          <PlaceHolder useLoremIpsum />
+          <PlaceHolder label="image placeholder" />
+          <PlaceHolder useLoremIpsum />
+        </TripleContentBrick>
+
         <EmailSqueezeBrick
           title="Join our Newsletter"
           subtitle="To get updates about what we want you to know abou…"
@@ -117,6 +124,32 @@ class App extends Component {
           buttonLabel="Join"
           placeholder="Enter your email"
         />
+
+
+        <FooterBrick theme={ FOOTER_BAND_THEME }>
+
+          {/* FirstChild */}
+          <div style={{ textAlign: 'left' }}>
+            <p>Terminos y condiciones</p>
+            <p>Privacidad</p>
+          </div>
+
+          {/* SecondChild */}
+          <div style={{ textAlign: 'center' }}>
+            <h2>Landricks starter Kit</h2>
+          </div>
+          
+          {/* ThirdChild */}
+          <div style={{ textAlign: 'right' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', float: 'right' }}>
+              <li><FontAwesome style={{ marginRight: 20 }} name="facebook" /></li>
+              <li><FontAwesome style={{ marginRight: 20 }} name="twitter" /></li>
+              <li><FontAwesome style={{ marginRight: 20 }} name="linkedin" /></li>
+              <li><FontAwesome style={{ marginRight: 20 }} name="apple" /></li>
+            </ul>
+          </div>  
+
+        </FooterBrick>
 
 
       </LandingCanvas>
